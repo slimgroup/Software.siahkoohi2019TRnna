@@ -91,6 +91,9 @@ The saving directory can be changed by modifying `savePath` variable in `src/gen
 
 Please contact alisk@gatech.edu for further questions.
 
+## Acknowledgments
+
+The authors thank Xiaowei Hu for his open-access [repository](https://github.com/xhujoy/CycleGAN-tensorflow) on GitHub. Our software implementation built on this work.
 
 ## Author
 
