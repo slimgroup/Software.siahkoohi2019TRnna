@@ -399,7 +399,7 @@ class LearnedWaveSim(object):
 
             CNN_wave_history.append(self.sess.run(
                 [self.CNN_wave],
-                feed_dict={self.LF_wave: LF_wave_history[-1]})[0])
+                feed_dict={self.Noisy_wave[0]: LF_wave_history[-1]})[0])
 
             self.solverHF.forward(m=self.model.m, src=self.src, time_m=time_index*\
                 self.virt_timestep, time=(time_index+1)*self.virt_timestep, u=self.u_HF)
