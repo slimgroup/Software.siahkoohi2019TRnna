@@ -389,20 +389,6 @@ class LearnedWaveSim(object):
         self.u_HF.data.fill(0.)
         self.u_LF.data.fill(0.)
 
-        self.solverLF.forward(m=self.model.m, src=self.src, time_m=0, 
-            time=self.virt_timestep,  u=self.u_LF)
-
-        LF_wave = np.transpose(np.array(self.u_LF.data[:, :, :]), \
-            (1, 2, 0)).astype(np.float32)[None, :, :, :]
-
-        CNN_wave_history = self.sess.run(
-            [self.CNN_wave],
-            feed_dict={self.LF_wave: LF_wave})
-
-
-        self.u_HF.data.fill(0.)
-        self.u_LF.data.fill(0.)
-
         for time_index in range(self.virtSteps):
             clear_cache()
 
@@ -411,6 +397,10 @@ class LearnedWaveSim(object):
             LF_wave_history.append(np.transpose(np.array(self.u_LF.data[:, :, :]), 
                 (1, 2, 0)).astype(np.float32)[None, :, :, :])
 
+            CNN_wave_history.append(self.sess.run(
+                [self.CNN_wave],
+                feed_dict={self.LF_wave: LF_wave_history[-1]})[0])
+
             self.solverHF.forward(m=self.model.m, src=self.src, time_m=time_index*\
                 self.virt_timestep, time=(time_index+1)*self.virt_timestep, u=self.u_HF)
             HF_wave_history.append(np.transpose(np.array(self.u_HF.data[:, :, :]), 
@@ -418,7 +408,7 @@ class LearnedWaveSim(object):
 
         for iG in range(self.virtSteps):
 
-            self.dataset_CNN[:, :, :, iG] = np.transpose(CNN_wave_history[0][iG][0, :, :, :], \
+            self.dataset_CNN[:, :, :, iG] = np.transpose(CNN_wave_history[iG][0][0, :, :, :], \
                 (2, 0 , 1))
             self.dataset_HF[:, :, :, iG] = np.transpose(HF_wave_history[iG][0, :, :, :], (2, 0 , 1))
             self.dataset_LF[:, :, :, iG] =np.transpose(LF_wave_history[iG][0, :, :, :], (2, 0 , 1))
