@@ -6,7 +6,7 @@ repo_name=NN-augmented-wave-sim
 path_script=$HOME/$repo_name/src
 path_data=$HOME/$repo_name/vel-model
 path_model=$HOME/$repo_name/outputs
-mkdir $path_model
+mkdir -p $path_model
 
 CUDA_VISIBLE_DEVICES=0 python $path_script/main_shared_weights.py --experiment_dir $experiment_name --phase train \
 --same_model_training 1 --virtSteps 3 --correction_num 1 --training_fraction 2 --epoch 500 --epoch_step 100 \
