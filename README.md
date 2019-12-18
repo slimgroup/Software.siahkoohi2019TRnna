@@ -6,7 +6,7 @@ Codes for generating results in Siahkoohi, A., Louboutin, M. and Herrmann, F.J.,
 
 ## Prerequisites
 
-This code has been tested on Deep Learning AMI (Amazon Linux) Version 11.0 on Amazon Web Services (AWS). We used `g3s.xlarge` instance. Also, we use GCC compiler version 7.3.0.
+This code has been tested on Deep Learning AMI (Amazon Linux) Version 11.0 on Amazon Web Services (AWS). We used `g3.4xlarge` instance. Also, we use GCC compiler version 7.3.0.
 
 This software is based on [Devito-3.2.0](https://github.com/opesci/devito/releases/tag/v3.2.0), [ODL-0.7.0](https://github.com/odlgroup/odl/releases/tag/v0.7.0), and [TensorFlow-1.10.0](https://github.com/tensorflow/tensorflow/releases/tag/v1.10.0). Follow the steps below to install the necessary libraries:
 
