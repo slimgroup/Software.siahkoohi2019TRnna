@@ -6,7 +6,7 @@ experiment_name=LWS-3nets
 
 path_script=$HOME/$repo_name/src
 path_data=$HOME/$repo_name/vel-model
-path_model=$HOME/$repo_name/outputs
+path_model=$HOME/$repo_name/outputs/$experiment_name
 
 CUDA_VISIBLE_DEVICES=0 python $path_script/main.py --experiment_dir $experiment_name --phase test \
 --same_model_training 1 --correction_num 3 --training_fraction 2 --netEpoch 10 --epoch 500 --epoch_step 100 \
