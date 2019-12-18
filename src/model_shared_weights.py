@@ -298,8 +298,6 @@ class LearnedWaveSim(object):
 
     def save(self, checkpoint_dir, step):
         model_name = "LearnedWaveSim.model"
-        model_dir = "%s_%s" % (self.experiment_dir, self.image_size0)
-        checkpoint_dir = os.path.join(checkpoint_dir, model_dir)
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
         self.saver.save(self.sess,
@@ -308,8 +306,6 @@ class LearnedWaveSim(object):
 
     def load(self, checkpoint_dir):
         print(" [*] Reading checkpoint...")
-        model_dir = "%s_%s" % (self.experiment_dir, self.image_size0)
-        checkpoint_dir = os.path.join(checkpoint_dir, model_dir)
         ckpt = tf.train.get_checkpoint_state(checkpoint_dir)
         if ckpt and ckpt.model_checkpoint_path:
             ckpt_name = os.path.basename(ckpt.model_checkpoint_path)
