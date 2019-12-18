@@ -397,5 +397,5 @@ class LearnedWaveSim(object):
             self.dataset_CNN[:, :, :, iG] = np.transpose(CNN_wave_history[iG][0, :, :, :], \
                 (2, 0 , 1))
             self.dataset_HF[:, :, :, iG] = np.transpose(HF_wave_history[iG][0, :, :, :], (2, 0 , 1))
-            self.dataset_LF[:, :, :, iG] =np.transpose(CNN_input_history[iG][0, :, :, :], (2, 0 , 1))
+            self.dataset_LF[:, :, :, iG] =np.transpose(LF_wave_history[iG][0, :, :, :], (2, 0 , 1))
         self.file_prediction.close()
