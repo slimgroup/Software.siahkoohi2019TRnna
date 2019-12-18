@@ -6,7 +6,7 @@ experiment_name=LWS_sharedweights_3corr
 
 path_script=$HOME/$repo_name/src
 path_data=$HOME/$repo_name/vel-model
-path_model=$HOME/$repo_name/outputs
+path_model=$HOME/$repo_name/outputs/$experiment_name
 
 CUDA_VISIBLE_DEVICES=0 python $path_script/main_shared_weights.py --experiment_dir $experiment_name --phase test \
 --same_model_training 1 --virtSteps 3 --correction_num 1 --training_fraction 2 --epoch 500 --epoch_step 100 \
