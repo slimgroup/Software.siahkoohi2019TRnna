@@ -23,7 +23,6 @@ pip install  -e .
 export DEVITO_ARCH=gnu
 export OMP_NUM_THREADS=16
 export DEVITO_OPENMP=1
-export PYTHONPATH="${PYTHONPATH}:${HOME}/devito"
 
 cd $HOME/odl
 pip install --user -e .
