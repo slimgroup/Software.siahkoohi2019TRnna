@@ -14,7 +14,7 @@ This software is based on [Devito-3.2.0](https://github.com/opesci/devito/releas
 cd $HOME
 git clone https://github.com/alisiahkoohi/NN-augmented-wave-sim
 git clone --branch v0.7.0 https://github.com/odlgroup/odl.git
-git clone --branch v3.2.0 https://github.com/opesci/devito.git
+git clone --branch v3.2.0 https://github.com/devitocodes/devito.git
 
 cd $HOME/devito
 conda env create -f environment.yml
