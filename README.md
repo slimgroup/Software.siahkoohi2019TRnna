@@ -33,7 +33,7 @@ pip install h5py
 
 ## Dataset
 
-The Marmousi model we use is placed at `vel-model/` directory.
+The Marmousi model we use is obtained from [Devito Codes project](https://github.com/devitocodes) and will be automatically downloaded and placed at `./vel-model/` directory.
 
 ## Script descriptions
 
