@@ -7,6 +7,7 @@ path_script=$HOME/$repo_name/src
 path_data=$HOME/$repo_name/vel-model
 path_model=$HOME/$repo_name/outputs/$experiment_name
 mkdir -p $path_model
+mkdir -p $path_data
 
 if [ ! -f $path_data/vp_marmousi_bi ]; then
 	wget https://github.com/devitocodes/data/raw/master/Simple2D/vp_marmousi_bi \
