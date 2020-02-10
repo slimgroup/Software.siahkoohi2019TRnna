@@ -86,6 +86,22 @@ bash src/genFigures.sh
 The saving directory can be changed by modifying `savePath` variable in `src/genFigures.sh`\.
 
 
+## Citation
+
+If you find this software useful in your research, please cite:
+
+```bibtex
+@unpublished {siahkoohi2019TRnna,
+  title = {Neural network augmented wave-equation simulation},
+  booktitle = {Tech. rep. TR-CSE-2019-1, Georgia Institute of Technology},
+  year = {2019},
+  month = {09},
+  keywords = {deep learning, finite difference, wave equation},
+  url = {https://arxiv.org/pdf/1910.00925.pdf},
+  author = {Ali Siahkoohi and Mathias Louboutin and Felix J. Herrmann}
+}
+```
+
 ## Questions
 
 Please contact alisk@gatech.edu for further questions.
